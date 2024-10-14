@@ -418,9 +418,11 @@ span {
 
 .home .section-1-kanan {
     width: 35%;
-    height: 100%;
-    display: grid;
-    place-items: center;
+    height: max-content;
+    display: flex;
+    
+    justify-content: center;
+    align-items: center;
 }
 
 .profil {
@@ -466,6 +468,7 @@ span {
         height: 35vh;
     }
 }
+
 
 
 /* about */
