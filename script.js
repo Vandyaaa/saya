@@ -60,7 +60,9 @@ const kanan = ScrollReveal({
     reset: true     
 })
 kanan.reveal('.profil', {delay:1500})
-kiri.reveal('.Oline', {delay:2000, opacity:0, visibility:'hidden'})
+kiri.reveal('.Oline:nth-child(2)', {delay:2000,scale:0, opacity:0, visibility:'hidden'})
+kiri.reveal('.Oline:nth-child(3)', {delay:2200,scale:0, opacity:0, visibility:'hidden'})
+kiri.reveal('.Oline:nth-child(4)', {delay:2400,scale:0, opacity:0, visibility:'hidden'})
 
 kanan.reveal('.col', {delay:500})
 kanan.reveal('.skills-box:nth-child(1)', {delay:200})
