@@ -225,7 +225,12 @@ section {
 .typedText{
     color: var(--1);
     text-decoration: underline;
+    text-decoration-color: var(--8);
     opacity: 1;
+}
+
+.fistar{
+    color: yellow;
 }
 
 
@@ -417,8 +422,63 @@ span {
     user-select: none;
     animation: animateBackground 5s ease infinite;
     
+    
     /* Animasi */
 }
+
+.Oline{
+    position: absolute;
+    width: 230px;
+    height: 230px;
+    background-color: transparent;
+    border: 3px solid var(--8);
+    border-radius: 50%;
+    opacity: 0;
+}
+
+.Oline:nth-child(1) {
+opacity: 0;
+    animation: wjwj 2s linear infinite;
+}
+
+
+
+.Oline:nth-child(2){
+    animation: wjwj3 5s linear infinite;
+    scale: 1.1;
+    animation-delay: 2s;
+}
+
+
+.Oline:nth-child(3) {
+    scale: 1.2;
+    animation: wjwj3 5s linear infinite;
+    animation-delay: 2.5s;
+}
+
+
+.Oline:nth-child(4) {
+
+    
+    animation: wjwj3 5s linear infinite;
+    animation-delay: 3s;
+    scale: 1.3;
+}
+
+@keyframes wjwj3 {
+    0% {
+            opacity: 0;
+        }
+    
+        50% {
+            opacity: 1;
+        }
+    
+        100% {
+            opacity: 0;
+        }
+}
+
 .home .section-1-kanan .profil img {
     height: 100%;
     width: 100%;
@@ -485,6 +545,7 @@ span {
     align-items: center;
     justify-content: space-between;
     background-color: var(--5);
+    border-radius: 20px;
     box-shadow: -20px 20px 60px var(--5II),
             20px -20px 60px var(--dr3);
     color: var(--1);
