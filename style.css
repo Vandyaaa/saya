@@ -167,7 +167,7 @@ a{
     color: var(--7);
     opacity: 50%;
     height: 80px;
-    margin-bottom: 50px;
+    margin-bottom: 15px;
     border-radius: 20px;
 }
 
@@ -186,9 +186,6 @@ section {
     justify-content: center;
     align-items: center;
     font-size: 24px;
-}
-.footer {
-    background-color: var(--1);
 }
 
 .home {
@@ -292,52 +289,19 @@ span {
     display: grid;
     background-color: transparent;
     position: absolute;
-    width: 100%;
-    height: 100%;
     place-items: center;
     opacity: 1;
     scale: 1;
     transition: .4s;
+    color: var(--7);
 }
 
 .btnck{
     transition: .3s;
 }
 
-.btnck2{
-    background-color: var(--8);
-}
-
-.btnck2 img{
-    width: 17px;
-    transition: .5s;
-    position: absolute;
-}
-
-.img-light{
-    scale: 1;
-    transition: .5s;
-}
-
-.img-dark{
-    scale: 0;
-    transition: .5s;
-}
-
-.btnck2:hover{
-    background-color: var(--1);
-}
-
-.btnck2:hover .img-light{
-    scale: 0;
-}
-
-.btnck2:hover .img-dark {
-    scale: 1;
-}
-
 .btnck:hover{
-    background-color: var(--1);
+    background-color: var(--7);
 }
 
 .btnck:hover i {
@@ -395,7 +359,8 @@ span {
     height: 40px;
     border-radius: 50%;
     box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.45);
-    color: var(--1);
+    color: var(--7);
+    background-color: var(--5);
     cursor: pointer;
     font-size: 16px;
 }
@@ -588,10 +553,11 @@ opacity: 0;
 
 .about .info-sc2 .isi-info {
     font-size: clamp(0.75rem, 0.275rem + 1vw, 1rem);
-    padding: 30px;
+    padding: 30px 15px 30px 15px;
     text-align: center;
     margin-top: 0;
     line-height: 27px;
+
 }
 
 .about .info-sc2 .isi-info span {
@@ -625,8 +591,9 @@ opacity: 0;
 
 .skills-list span {
     font-size: 14px;
-    background: var(--7);
-    color: var(--5);
+    background: var(--5II);
+    color: var(--1);
+    border: 3px solid var(--8);
     padding: 2px 10px;
     border-radius: 0px;
     overflow: hidden;
@@ -746,6 +713,7 @@ opacity: 0;
     grid-row-gap: 0px;
     width: 100%;
     height: 50%;
+    min-height: 30vh;
     gap: 20px;
     transition: 1s;
     padding-bottom: 20px;
@@ -774,6 +742,39 @@ opacity: 0;
     user-select: none;
     border: 5px solid var(--3);
     border-radius: 40px;
+}
+
+.hidden {
+    display: none;
+}
+
+.search {
+    margin-bottom: 70px;
+    width: 100%;
+    max-width: 500px;
+    height: 50px;
+    border-radius: 15px;
+    padding: 10px;
+    outline: none;
+    background-color: var(--5II);
+    color: var(--1);
+    border: 3px solid var(--8);
+    font-weight: 600;
+}
+
+#none {
+    background-color: var(--5II);
+    border-radius: 30px;
+    color: var(--1);
+    position: absolute;
+    top: 10%;
+    left: 50%;
+    translate: -50% 0px;
+    padding: 50px;
+    font-weight: 600;
+    font-size: clamp(12px, (2.5vw), 16px);
+    width: max-content;
+    display: none;
 }
 
 .pj1{
@@ -878,7 +879,7 @@ opacity: 0;
 .pj-title {
     content: "";
     position: absolute;
-    color: var(--1);
+    color: transparent;
     width: 100%;
     height: 100%;
     font-size: 20px;
@@ -1100,7 +1101,7 @@ opacity: 0;
 }
 
 .description {
-    width: 50%;
+    width: 100%;
 }
 
 .description::before{
@@ -1448,9 +1449,8 @@ footer{
     align-items: center;
     flex-direction: column;
     row-gap: 30px;
-    background: var(--dr3);
+    background: var(--dr5);
     padding-block: 40px 60px;
-    clip-path: polygon(0 0, 100% 10%, 100% 100%, 0% 100%);
     z-index: 99;
 }
 

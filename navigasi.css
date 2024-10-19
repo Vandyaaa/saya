@@ -168,6 +168,9 @@
 
 .nav #menu ul li a.active p {
     color: var(--1);
+    text-decoration: underline;
+    text-decoration-color: var(--8);
+    text-decoration-thickness: 3px;
 }
 
 .nav .menu-buka {

@@ -7,12 +7,44 @@ let typingEffect = new Typed(".typedText", {
 })
 
 
+function filterItems() {
+    const searchInput = document.getElementById('search').value.toLowerCase();
+    const kosong = document.getElementById('none');
+    const items = document.querySelectorAll('.projek');
+    let found = false;
+
+    items.forEach(function(item) {
+        const itemName = item.querySelector('.iteme').textContent.toLowerCase();
+        if (itemName.includes(searchInput)) {
+            item.style.display = 'flex';
+            found = true; // Set found to true if any item matches the search
+        } else {
+            item.style.display = 'none';
+        }
+    });
+
+    // If no items are found, change background color to yellow
+    if (!found) {
+        kosong.style.display = 'grid';
+    } else {
+        kosong.style.display = 'none'; // Reset to white if items are found
+    }
+
+    // Show all items again if search input is empty
+    if (searchInput === '') {
+        items.forEach(function(item) {
+            item.style.display = 'flex';
+        });
+        kosong.style.backgroundColor = 'white'; // Reset background color
+    }
+}
+
 
 const bottom = ScrollReveal({
         origin: 'bottom',
         distance: '40px',
         duration: 1000,
-        reset: true
+        reset: false
 })
 bottom.reveal('.projek', { duration: 2000 })
 
