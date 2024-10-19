@@ -35,7 +35,6 @@ function filterItems() {
         items.forEach(function(item) {
             item.style.display = 'flex';
         });
-        kosong.style.backgroundColor = 'white'; // Reset background color
     }
 }
 
