@@ -273,7 +273,9 @@ span {
 }
 
 .home .btnck {
-    background-color: var(--dr3);
+    background-color: transparent;
+    border: 3px solid var(--dr3);
+    
     color: var(--2);
     width: 50px;
     display: grid;
@@ -302,6 +304,7 @@ span {
 
 .btnck:hover{
     background-color: var(--7);
+    border: 3px solid var(--2);
 }
 
 .btnck:hover i {
@@ -691,7 +694,8 @@ opacity: 0;
     width: 124px;
     height: 46px;
     border-radius: 50px;
-    background-color: var(--dr3);
+    background-color: transparent;
+    border: 3px solid var(--dr3);
     color: var(--1);
     font-size: 13px;
     font-weight: 600;
