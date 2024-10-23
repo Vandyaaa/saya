@@ -229,47 +229,78 @@ function setActiveLink() {
     });
 }
 
-
-
-function redirectToWhatsApp() {
-    // Ambil nilai input dari form
-    var nama = document.getElementById('nama').value.trim();
-    var judul = document.getElementById('judul').value.trim();
-    var isi = document.getElementById('isi').value.trim();
-
-    // Elemen untuk pesan error
-    var errorMessageDiv = document.getElementById('error-messages');
-    
-    // Reset pesan error
-    errorMessageDiv.textContent = "";
-
-    // Validasi jika input masih kosong
-    if (!nama || !judul || !isi) {
-        // Tampilkan pesan error di dalam div
-        errorMessageDiv.innerHTML = '<div id="error-message"><i class="fi fi-br-exclamation"></i>please fill in all fields</div>';
-        errorMessageDiv.style.bottom = '10px';
-        errorMessageDiv.style.opacity = '1';
+function sendEmail() {
+        var nama = document.getElementById('nama').value;
+        var email = document.getElementById('email').value;
+        var isi = document.getElementById('isi').value;
+        var errorMessageDiv = document.getElementById('error-messages');
+        var successMessageDiv = document.getElementById('success-messages');
         
-        return; // Hentikan fungsi jika ada input yang kosong
+        // Cek apakah semua field terisi
+        if (!nama || !email || !isi) {
+            // Tampilkan pesan error di dalam div
+            errorMessageDiv.innerHTML = '<div id="error-message">Wait a second! All fields need some love</div>';
+            errorMessageDiv.style.bottom = '10px';
+            errorMessageDiv.style.opacity = '1';
+            
+            return; // Hentikan fungsi jika ada input yang kosong
+        }
+
+        // Jika semua field terisi, kirim email dengan EmailJS
+        var params = {
+            nama: nama,
+            email: email,
+            isi: isi
+        };
+
+        emailjs.send('service_wocvrs4','template_rzz34k4', params)
+            .then(function(response) {
+                console.log('SUCCESS!', response.status, response.text);
+                successMessageDiv.innerHTML = '<div id="success-message">Done! Message flying now!</div>';
+            }, function(error) {
+                console.log('FAILED...', error);
+            });
     }
 
+// function redirectToWhatsApp() {
+//     // Ambil nilai input dari form
+//     var nama = document.getElementById('nama').value.trim();
+//     var judul = document.getElementById('judul').value.trim();
+//     var isi = document.getElementById('isi').value.trim();
+
+//     // Elemen untuk pesan error
+//     var errorMessageDiv = document.getElementById('error-messages');
+    
+//     // Reset pesan error
+//     errorMessageDiv.textContent = "";
+
+//     // Validasi jika input masih kosong
+//     if (!nama || !judul || !isi) {
+//         // Tampilkan pesan error di dalam div
+//         errorMessageDiv.innerHTML = '<div id="error-message"><i class="fi fi-br-exclamation"></i>please fill in all fields</div>';
+//         errorMessageDiv.style.bottom = '10px';
+//         errorMessageDiv.style.opacity = '1';
+        
+//         return; // Hentikan fungsi jika ada input yang kosong
+//     }
+
     
 
-    // Nomor WhatsApp yang dituju (sesuaikan dengan nomor tujuan)
-    var phoneNumber = '6287739770494'; 
+//     // Nomor WhatsApp yang dituju (sesuaikan dengan nomor tujuan)
+//     var phoneNumber = '6287739770494'; 
 
-    // Format pesan dengan Nama dan Judul menjadi teks bold dan italic
-    var message = ` *Nama:* *${nama}*\n *Judul:* *${judul}*\n Pesan: ${isi}`;
+//     // Format pesan dengan Nama dan Judul menjadi teks bold dan italic
+//     var message = ` *Nama:* *${nama}*\n *Judul:* *${judul}*\n Pesan: ${isi}`;
 
-    // Encode pesan agar aman untuk URL
-    var encodedMessage = encodeURIComponent(message);
+//     // Encode pesan agar aman untuk URL
+//     var encodedMessage = encodeURIComponent(message);
 
-    // URL untuk mengarahkan ke WhatsApp
-    var url = `https://api.whatsapp.com/send?phone=${phoneNumber}&text=${encodedMessage}`;
+//     // URL untuk mengarahkan ke WhatsApp
+//     var url = `https://api.whatsapp.com/send?phone=${phoneNumber}&text=${encodedMessage}`;
 
-    // Buka halaman WhatsApp dengan URL yang disiapkan
-    window.open(url);
-}
+//     // Buka halaman WhatsApp dengan URL yang disiapkan
+//     window.open(url);
+// }
 
 
 // document.addEventListener('mousemove', function(e) {
@@ -298,3 +329,16 @@ function redirectToWhatsApp() {
                 behavior: 'smooth' // Efek smooth scrolling
             });
         }
+
+
+
+
+        // function kirimkan() {
+        //     let prams = {
+        //         name : document.getElementById('nama').value,
+        //         email : document.getElementById('email').value,
+        //         message : document.getElementById('isi').value,
+        //     }
+
+        //     emailjs.send('service_wocvrs4','template_rzz34k4',prams).then(alert('Pesan Terkirim'))
+        // }

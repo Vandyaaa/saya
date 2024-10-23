@@ -275,7 +275,6 @@ span {
 .home .btnck {
     background-color: transparent;
     border: 3px solid var(--dr3);
-    
     color: var(--2);
     width: 50px;
     display: grid;
@@ -299,23 +298,24 @@ span {
 }
 
 .btnck{
-    transition: .3s;
+    transition: .2s;
 }
 
 .btnck:hover{
-    background-color: var(--7);
-    border: 3px solid var(--2);
+    background-color: var(--dr3);
+    border: 3px solid var(--dr3);
 }
 
 .btnck:hover i {
     scale: 1;
-    color: var(--dr3);
+    color: var(--1);
     visibility: visible;
 }
 
 .home .expl {
-    background-color: var(--7);
-    color: var(--dr3);
+    background-color: transparent;
+    color: var(--1);
+    border: 3px solid var(--dr3);
     text-decoration: none;
     overflow: hidden;
     position: relative;
@@ -325,11 +325,8 @@ span {
 .home .expl p{
     transition: .3s;
     font-weight: 600;
-}
-
-.home .expl:hover p{
-    color: var(--dr3);
     z-index: 2;
+    color: var(--1);
 }
 
 .home .expl:after{
@@ -340,11 +337,12 @@ span {
     background-color: var(--8);
     position: absolute;
     transition: .5s;
-    left: 0;
+    left: -15px;
+    border-radius: 10px;
 }
 
 .home .expl:hover::after {
-    width: 100%;
+    width: calc(100% + 35px);
     height: 50px;
 }
 
@@ -702,11 +700,11 @@ opacity: 0;
     display: grid;
     place-items: center;
     margin-top: 20px;
-    transition: .3s;
+    transition: .2s;
 }
 
 .show-all:hover{
-    background-color: var(--dr5);
+    background-color: var(--dr3);
 }
 
 .row-sc3 {
@@ -744,7 +742,7 @@ opacity: 0;
     /* agar gambar tidak terulang */
     -webkit-user-drag: none;
     user-select: none;
-    border: 5px solid var(--3);
+    border: 5px solid var(--5II);
     border-radius: 40px;
 }
 
@@ -1309,6 +1307,35 @@ opacity: 0;
 }
 
 
+.motivasi {
+    width: 100%;
+    display: block;
+    padding: 0px 12%;
+    padding-block: 5em;
+}
+
+.con-quotes {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.con-quotes .quote {
+    width: 100%;
+    min-width: min-content;
+    height: min-content;
+    padding: 2em;
+    background-color: var(--dr3);
+    color: var(--1);
+    font-size: clamp(12px, (2.5vw), 16px);
+    border-radius: 12px;
+}
+
+.quote .asing {
+    margin-bottom: 5px;
+    font-size: clamp(9px, (2.5vw), 13px);
+    opacity: .6;
+}
 
 .komen .row-sc4 form {
     display: flex;
@@ -1344,7 +1371,7 @@ opacity: 0;
     transform: translateY(5px);
 }
 
-.komen .row-sc4 #judul{
+.komen .row-sc4 #email{
     transform: translateY(5px);
 }
 }
@@ -1359,7 +1386,7 @@ width: 100%;
     resize: none;
 }
 
-.komen .kirim, #error-message{
+.komen .kirim, #error-message, #success-message{
     border: none;
     height: 50px;
     color: var(--dr3);
@@ -1373,18 +1400,18 @@ width: 100%;
     place-items: center;
 }
 
-.error-messages{
+.error-messages, .success-messages{
 width: calc(100% - 80px);
 height: 50px;
 bottom: -100%;
 }
 
-#error-message{
+#error-message, #success-message{
     font-size: 12px;
     padding: 10px;
     right: 70px;
-    width: calc(100% - 80px);
-    background-color: rgb(228, 38, 38);
+    width: auto;
+    background-color: var(--8);
     transition: .5s;
     font-weight: 600;
     display: flex;
@@ -1392,6 +1419,12 @@ bottom: -100%;
     align-items: center;
     animation: upnya 6s;
     transform: translateY(calc(100% + 50px));
+    color: var(--1);
+}
+
+#success-message {
+    background-color: rgb(64, 255, 90);
+    color: var(--5);
 }
 
 @keyframes upnya {
@@ -1410,7 +1443,7 @@ bottom: -100%;
     }
 }
 
-#error-message i{
+#error-message i, #success-message i{
     margin-right: 10px;
 }
 .kirim {
@@ -1520,7 +1553,7 @@ footer .bottom-footer p a{
                     font-size: 18px;
                     border-radius: 5px;
                     cursor: pointer;
-                    z-index: 1000;
+                    z-index: 100;
                     transition: opacity 0.3s ease;
                     transition: 1s;
                     /* Transisi untuk efek muncul */
