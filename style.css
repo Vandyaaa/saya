@@ -33,7 +33,7 @@ body {
 }
 
 ::-webkit-scrollbar-thumb{
-    background-color: var(--dr5);
+    background-color: var(--dr5II);
 }
 
 .expl, .btnck, .logone, .expand, .send, footer, button{
