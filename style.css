@@ -1309,6 +1309,7 @@ opacity: 0;
 
 .motivasi {
     width: 100%;
+    height: max-content;
     display: block;
     padding: 0px 12%;
     padding-block: 5em;
@@ -1320,21 +1321,90 @@ opacity: 0;
     flex-direction: column;
 }
 
-.con-quotes .quote {
+.con-quotes .box-quote {
+    display: flex;
     width: 100%;
-    min-width: min-content;
+    justify-content: flex-start;
+    padding-block: 1em;
+}
+
+.con-quotes .box-quote:nth-child(2n) {
+    justify-content: flex-end;
+}
+
+.con-quotes .quote {
+    width: max-content;
     height: min-content;
     padding: 2em;
-    background-color: var(--dr3);
+    padding-block: 3em;
+    background-color: var(--5);
+    border: 3px solid var(--dr3);
     color: var(--1);
     font-size: clamp(12px, (2.5vw), 16px);
     border-radius: 12px;
+    animation: floating 4s linear infinite;
+        box-shadow: 20px 20px 60px var(--5II),
+            -20px -20px 60px var(--5);
+    transition: .2s;
+}
+
+.quote .tag-logo1, .tag-logo2{
+    position: absolute;
+    opacity: .1;
+}
+
+.quote .tag-logo1 {
+    top: 12px;
+    left: 12px;
+}
+
+.quote .tag-logo2 {
+    bottom: 12px;
+    right: 12px;
+}
+
+.quote:hover {
+    border-color: var(--8);
+}
+
+.quote:hover .tag-logo1, .quote:hover .tag-logo2{
+    color: var(--8);
+    opacity: 1;
+}
+
+.box-quote:nth-child(1) .quote {
+    animation-delay: 0s;
+    
+}
+
+.box-quote:nth-child(2) .quote {
+    animation-delay: .2s;
+    
+}
+
+.box-quote:nth-child(3) .quote {
+    animation-delay: .4s;
+    
+}
+
+@keyframes floating {
+    0% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(10px);
+    }
+    100% {
+        transform: translateY(0px);
+    }
 }
 
 .quote .asing {
     margin-bottom: 5px;
     font-size: clamp(9px, (2.5vw), 13px);
-    opacity: .6;
+    opacity: .4;
+    font-weight: 600;
+    color: var(--1);
 }
 
 .komen .row-sc4 form {
