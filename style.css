@@ -6,7 +6,7 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-    font-family: "Arvo", serif;
+    font-family: "Outfit", sans-serif;
     font-weight: 400;
     font-style: normal;
     font-style: normal;
@@ -217,6 +217,7 @@ section {
 
 .Prtyp{
     color: var(--1);
+    font-weight: 800;
 }
 
 .typedText{
@@ -339,6 +340,10 @@ span {
     transition: .5s;
     left: -15px;
     border-radius: 10px;
+}
+
+.home .expl:hover p{
+    color: var(--5);
 }
 
 .home .expl:hover::after {
