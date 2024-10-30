@@ -215,16 +215,16 @@ section {
     border-radius: 5px;
 }
 
-.Prtyp{
+.featured-name .Prtyp{
     color: var(--1);
     font-weight: 800;
 }
 
 .typedText{
-    color: var(--1);
     text-decoration: underline;
     text-decoration-color: var(--8);
     opacity: 1;
+    font-weight: 800;
 }
 
 .fistar{
@@ -236,7 +236,6 @@ section {
 .home .section-1-kiri .featured-name p,
 span {
     font-size: clamp(30px, (2.5vw), 50px);
-    font-weight: 600;
 }
 
 .home .section-1-kiri .info-sc1 {
