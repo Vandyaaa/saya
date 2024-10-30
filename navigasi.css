@@ -179,6 +179,14 @@
     font-weight: 600;
     color: var(--dr5II);
     transition: .3s;
+    
+}
+
+@media (min-width:760px) {
+    .nav #menu ul li a p,
+        .back {
+            font-size: 15px;
+        }
 }
 
 .c-back{
