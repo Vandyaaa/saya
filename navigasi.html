@@ -7,28 +7,102 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
     <link rel="stylesheet" href="navigasi.css">
+    <style>
+        
+        a {
+  display: inline-block;
+  width: calc(100% - 200px);
+  height: 100px;
+  background: #ccc;
+  border: 2px solid #000;
+  position: relative;
+  margin: 10px;
+}
+
+a div {
+  position: absolute;
+  top: 0;
+  overflow: hidden;
+  width: 15px;
+  height: 100%;
+}
+
+a div:after {
+  content: '';
+  background: #ff0000;
+  width: 2px;
+  height: 75px;
+  position: absolute;
+  top: 12.5px;
+}
+
+a div:first-of-type {
+  left: -14px;
+}
+
+a div:first-of-type:after {
+  left: 0;
+}
+
+a div:last-of-type {
+  right: -14px;
+}
+
+a div:last-of-type:after {
+  right: 0;
+}
+
+a span {
+  display: block;
+  width: 30px;
+  height: 30px;
+  background: transparent;
+  position: absolute;
+  bottom: -20px;
+  right: -20px;
+  border: 2px solid #000;
+  border-radius: 25px;
+  box-shadow: 0 0 0 60px rgb(0, 255, 42);
+}
+
+a div:first-of-type span {
+  left: -20px;
+}
+
+a div:first-of-type span:first-child {
+  top: -20px;
+}
+
+a div:first-of-type span:last-child {
+  bottom: -20px;
+}
+
+a div:last-of-type span {
+  right: -20px;
+}
+
+a div:last-of-type span:first-child {
+  top: -20px;
+}
+
+a div:last-of-type span:last-child {
+  bottom: -20px;
+}
+    </style>
 </head>
 
 <body>
-    <div class="nav" id="nav">
-        <div class="logo-header">
-            <img src="asset/vilogoo.png" alt="Kuceng">
-        </div>
-        <ul id="menu">
-            <li><a href="#home" onclick="buka()">Home</a></li>
-            <li><a href="#about" onclick="buka()">About</a></li>
-            <li><a href="#rate" onclick="buka()">Projects</a></li>
-            <li><a href="#footer" onclick="buka()">Feedback</a></li>
-            
-        </ul>
-        <div class="wangsaf"><i class="fi fi-brands-whatsapp"></i>whatsapp</div>
-        <div class="menu-buka" onclick="buka()">
-            <div class="baris1" id="baris1"></div>
-            <div class="baris2" id="baris2"></div>
-            <div class="baris3" id="baris3"></div>
-        </div>
-
+<a href="">
+    <div>
+        <span></span>
+        <span></span>
     </div>
+
+    <div>
+        <span></span>
+        <span></span>
+    </div>
+</a>
 
 </body>
 
