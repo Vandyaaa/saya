@@ -227,7 +227,7 @@
 .dot-head{
     width: 3px;
     height: 7px;
-    background-color: var(--dr5);
+    background-color: var(--5);
     opacity: 100%;
     display: block;
     border-radius: 10px;

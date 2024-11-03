@@ -120,7 +120,36 @@ a{
 .c-back{
     width: min-content;
     display: flex;
+    flex-direction: row-reverse;
     justify-content: space-between;
+}
+
+.c-back .slash {
+    height: 10px;
+    width: 10px;
+    
+    border-top: 3px solid var(--dr5II);
+    border-right: 3px solid var(--dr5II);
+    rotate: 45deg;
+    opacity: 1;
+    margin-inline: .5rem;
+    transition: rotate .7s;
+}
+
+.title-page {
+    transition: .7s;
+    border-radius: 4px;
+    padding: .4em;
+    color: var(--1);
+}
+
+.c-back .back:hover+.slash {
+    rotate: 945deg;
+}
+
+.c-back .back:hover + .slash + .title-page {
+    background-color: var(--5II);
+    
 }
 
 ::selection{
@@ -756,7 +785,7 @@ opacity: 0;
     -webkit-user-drag: none;
     user-select: none;
     border: 5px solid var(--5II);
-    border-radius: 0px;
+    border-radius: 20px;
 }
 
 .projek::after {
@@ -858,8 +887,8 @@ opacity: 0;
     width: max-content;
     height: 32px;
     position: absolute;
-    top: 10px;
-    right: 50%;
+    bottom: 10px;
+    left: 10px;
     font-size: 10px;
     display: grid;
     place-items: center;
@@ -868,7 +897,6 @@ opacity: 0;
     border-radius: 200px;
     z-index: 100;
     transition: .5s;
-    transform: translateX(50%) translateY(0%);
 }
 
 .nama-projek p {
@@ -909,8 +937,10 @@ opacity: 0;
     font-weight: 600;
 }
 
-.projek:hover .nama-projek{
-    transform:translateX(50%) translateY(-150%);
+@media (min-width:760px) {
+    .projek:hover .nama-projek {
+            
+        }
 }
 
 .pj-title {

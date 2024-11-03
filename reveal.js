@@ -17,20 +17,18 @@ function filterItems() {
         const itemName = item.querySelector('.iteme').textContent.toLowerCase();
         if (itemName.includes(searchInput)) {
             item.style.display = 'flex';
-            found = true; // Set found to true if any item matches the search
+            found = true;
         } else {
             item.style.display = 'none';
         }
     });
 
-    // If no items are found, change background color to yellow
     if (!found) {
         kosong.style.display = 'grid';
     } else {
-        kosong.style.display = 'none'; // Reset to white if items are found
+        kosong.style.display = 'none'; 
     }
 
-    // Show all items again if search input is empty
     if (searchInput === '') {
         items.forEach(function(item) {
             item.style.display = 'flex';

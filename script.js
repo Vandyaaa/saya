@@ -182,21 +182,6 @@ let nav_links = document.querySelectorAll(".nav ul li a");
 
 window.onscroll = function() {
     var currentScrollPos = window.pageYOffset;
-
-    // if (prevScrollpos > currentScrollPos) {
-    //     hed.style.top = "0";
-    //     hed.style.opacity = 1;
-    //     hed.style.height = "80px";
-    //     hed.style.background = "var(--dr3)";
-    // } else {
-    //     if (!ohy.classList.contains("open")) {
-    //         hed.style.top = "0px";
-    //         hed.style.height = "65px";
-    //     } else {
-    //         hed.style.top = "0";
-    //         hed.style.opacity = 1;
-    //     }
-    // }
 sections.forEach(section => {
     let top = window.scrollY;
     let offset = section.offsetTop;
@@ -208,11 +193,8 @@ sections.forEach(section => {
         })
     }
 })
-
     prevScrollpos = currentScrollPos;
 }
-
-
 document.addEventListener("DOMContentLoaded", setActiveLink);
 window.addEventListener("scroll", setActiveLink);
 function setActiveLink() {
@@ -232,37 +214,31 @@ function setActiveLink() {
 }
 
 function sendEmail() {
-        var nama = document.getElementById('nama').value;
-        var email = document.getElementById('email').value;
-        var isi = document.getElementById('isi').value;
-        var errorMessageDiv = document.getElementById('error-messages');
-        var successMessageDiv = document.getElementById('success-messages');
-        
-        // Cek apakah semua field terisi
-        if (!nama || !email || !isi) {
-            // Tampilkan pesan error di dalam div
-            errorMessageDiv.innerHTML = '<div id="error-message">Wait a second! All fields need some love</div>';
-            errorMessageDiv.style.bottom = '10px';
-            errorMessageDiv.style.opacity = '1';
-            
-            return; // Hentikan fungsi jika ada input yang kosong
-        }
-
-        // Jika semua field terisi, kirim email dengan EmailJS
-        var params = {
-            nama: nama,
-            email: email,
-            isi: isi
-        };
-
-        emailjs.send('service_wocvrs4','template_rzz34k4', params)
-            .then(function(response) {
-                console.log('SUCCESS!', response.status, response.text);
-                successMessageDiv.innerHTML = '<div id="success-message">Done! Message flying now!</div>';
-            }, function(error) {
-                console.log('FAILED...', error);
-            });
+    var nama = document.getElementById('nama').value;
+    var email = document.getElementById('email').value;
+    var isi = document.getElementById('isi').value;
+    var errorMessageDiv = document.getElementById('error-messages');
+    var successMessageDiv = document.getElementById('success-messages');
+    if (!nama || !email || !isi) {
+        // Tampilkan pesan error di dalam div
+        errorMessageDiv.innerHTML = '<div id="error-message">Wait a second! All fields need some love</div>';
+        errorMessageDiv.style.bottom = '10px';
+        errorMessageDiv.style.opacity = '1';
+        return; 
     }
+    var params = {
+        nama: nama,
+        email: email,
+        isi: isi
+    };
+    emailjs.send('service_wocvrs4','template_rzz34k4', params)
+        .then(function(response) {
+            console.log('SUCCESS!', response.status, response.text);
+            successMessageDiv.innerHTML = '<div id="success-message">Done! Message flying now!</div>';
+        }, function(error) {
+            console.log('FAILED...', error);
+        });
+}
 
 // function redirectToWhatsApp() {
 //     // Ambil nilai input dari form
