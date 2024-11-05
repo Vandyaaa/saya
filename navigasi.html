@@ -1,109 +1,57 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-    <link rel="stylesheet" href="navigasi.css">
-    <style>
-        
-        a {
-  display: inline-block;
-  width: calc(100% - 200px);
-  height: 100px;
-  background: #ccc;
-  border: 2px solid #000;
-  position: relative;
-  margin: 10px;
-}
-
-a div {
-  position: absolute;
-  top: 0;
-  overflow: hidden;
-  width: 15px;
-  height: 100%;
-}
-
-a div:after {
-  content: '';
-  background: #ff0000;
-  width: 2px;
-  height: 75px;
-  position: absolute;
-  top: 12.5px;
-}
-
-a div:first-of-type {
-  left: -14px;
-}
-
-a div:first-of-type:after {
-  left: 0;
-}
-
-a div:last-of-type {
-  right: -14px;
-}
-
-a div:last-of-type:after {
-  right: 0;
-}
-
-a span {
-  display: block;
-  width: 30px;
-  height: 30px;
-  background: transparent;
-  position: absolute;
-  bottom: -20px;
-  right: -20px;
-  border: 2px solid #000;
-  border-radius: 25px;
-  box-shadow: 0 0 0 60px rgb(0, 255, 42);
-}
-
-a div:first-of-type span {
-  left: -20px;
-}
-
-a div:first-of-type span:first-child {
-  top: -20px;
-}
-
-a div:first-of-type span:last-child {
-  bottom: -20px;
-}
-
-a div:last-of-type span {
-  right: -20px;
-}
-
-a div:last-of-type span:first-child {
-  top: -20px;
-}
-
-a div:last-of-type span:last-child {
-  bottom: -20px;
-}
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Peta dengan Leaflet - Lokasi Acak</title>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <style>
+    #map {
+      height: 500px;
+      /* Tinggi peta */
+      width: 100%;
+      /* Lebar peta */
+    }
+  </style>
 </head>
 
 <body>
-<a href="">
-    <div>
-        <span></span>
-        <span></span>
-    </div>
+  <h1>Peta dengan Lokasi Acak</h1>
+  <div id="map"></div>
 
-    <div>
-        <span></span>
-        <span></span>
-    </div>
-</a>
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script>
+    // Inisialisasi peta dan atur posisi awal di koordinat tertentu
+    var map = L.map('map').setView([-7.563952, 110.835798], 13);
 
+    var map = L.map('map', {
+        center: [0, 0],
+        zoom: 2,
+        zoomControl: false
+      });
+
+    // Menambahkan layer peta dari OpenStreetMap
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      maxZoom: 19,
+      attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+    }).addTo(map);
+
+    // Fungsi untuk menambahkan marker di lokasi acak
+    function addRandomMarkers(num) {
+      for (var i = 0; i < num; i++) {
+        // Menghasilkan koordinat acak di sekitar area yang ditentukan
+        var lat = -7.563952 + (Math.random() - 0.5) * 0.1; // Mengubah angka untuk area lain
+        var lon = 110.835798 + (Math.random() - 0.5) * 0.1; // Mengubah angka untuk area lain
+        L.marker([lat, lon]).addTo(map)
+          .bindPopup("Lokasi Acak " + (i + 1))
+          .openPopup();
+      }
+    }
+
+    // Menambahkan 5 marker acak ke peta
+    addRandomMarkers(5);
+  </script>
 </body>
 
 </html>

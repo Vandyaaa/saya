@@ -1,4 +1,40 @@
- 
+
+// Inisialisasi peta
+var map = L.map('map').setView([-7.564148878815174, 110.8360755443573], 17);
+
+// Menambahkan tile layer dari OpenStreetMap
+L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+  maxZoom: 19,
+}).addTo(map);
+
+// Menambahkan marker dengan ikon FontAwesome
+var customIcon = L.divIcon({
+  html: '<i class="fa fa-map-marker-alt" style="font-size: 32px; color: red;"></i>', // Ikon kustom
+  className: 'custom-marker', // Kelas CSS opsional
+  iconSize: [32, 32] // Ukuran sesuai dengan ukuran ikon
+});
+
+var marker = L.marker([-7.564148878815174, 110.8360755443573], { icon: customIcon }).addTo(map);
+marker.bindPopup("<b>My Home</b>").openPopup();
+
+
+// Kustomisasi gaya tombol zoom
+var customZoomCSS = `
+  .leaflet-control-zoom-in, .leaflet-control-zoom-out {
+    border: 0px solid #555; /* Border berwarna */
+    height: 10px;
+  }
+  .leaflet-control-zoom {
+    box-shadow: none;       /* Hilangkan bayangan */
+  }
+`;
+var styleSheet = document.createElement("style");
+styleSheet.type = "text/css";
+styleSheet.innerText = customZoomCSS;
+document.head.appendChild(styleSheet);
+
+
+
 
 const bottom = ScrollReveal({
     
@@ -6,7 +42,7 @@ const bottom = ScrollReveal({
     duration: 1000,
     opacity:0,
     origin: 'bottom',
-    reset: true ,
+    reset: false ,
     viewFactor: 0.1
 })
 bottom.reveal('.nama-sc1', {})
@@ -40,7 +76,7 @@ const kiri = ScrollReveal({
     distance: '40px',
     duration: 1000,
     opacity:0,
-    reset: true     
+    reset: false     
 })
 kiri.reveal('.info-sc1', {delay:700})
 kiri.reveal('.sosmed-sc1 a:nth-child(1)', {delay:1100, opacity:0})
@@ -59,7 +95,7 @@ const kanan = ScrollReveal({
     origin: 'right',
     distance: '40px',
     duration: 1000,
-    reset: true     
+    reset: false     
 })
 kanan.reveal('.profil', {delay:1500})
 kiri.reveal('.Oline:nth-child(2)', {delay:2000,scale:0, opacity:0, visibility:'hidden'})
@@ -78,7 +114,7 @@ const atas = ScrollReveal({
     origin: 'top',
     distance: '40px',
     duration: 1000,
-    reset: true     
+    reset: false     
 })
 atas.reveal('.awalsc', {});
 atas.reveal('form', {delay:0});
@@ -307,6 +343,7 @@ function sendEmail() {
                 behavior: 'smooth' // Efek smooth scrolling
             });
         }
+
 
 
 
