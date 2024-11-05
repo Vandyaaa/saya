@@ -9,7 +9,7 @@ L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
 
 // Menambahkan marker dengan ikon FontAwesome
 var customIcon = L.divIcon({
-  html: '<i class="fa fa-map-marker-alt" style="font-size: 32px; color: red;"></i>', // Ikon kustom
+  html: '<i class="fa fa-map-marker-alt" style="font-size: 32px; color: #bb2626;"></i>', // Ikon kustom
   className: 'custom-marker', // Kelas CSS opsional
   iconSize: [32, 32] // Ukuran sesuai dengan ukuran ikon
 });
