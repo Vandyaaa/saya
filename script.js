@@ -42,7 +42,7 @@ const bottom = ScrollReveal({
     duration: 1000,
     opacity:0,
     origin: 'bottom',
-    reset: false ,
+    reset: true ,
     viewFactor: 0.1
 })
 bottom.reveal('.nama-sc1', {})
@@ -68,15 +68,12 @@ bottom.reveal('.show-all', {distance: '80px', duration: 1000})
 bottom.reveal('.projek-sc4', {distance: '40px', duration: 1000})
 bottom.reveal('.kirim', {distance: '0px',scale:0,delay:500, duration: 1000})
 
-
-
-
 const kiri = ScrollReveal({
     origin: 'left',
     distance: '40px',
     duration: 1000,
     opacity:0,
-    reset: false     
+    reset: true     
 })
 kiri.reveal('.info-sc1', {delay:700})
 kiri.reveal('.sosmed-sc1 a:nth-child(1)', {delay:1100, opacity:0})
@@ -88,14 +85,11 @@ kiri.reveal('.box-quote:nth-child(3)', {delay:0, opacity:0})
 kiri.reveal('.info-sc2', {opacity:0})
 kiri.reveal('.skill-title')
 
-
-
-
 const kanan = ScrollReveal({
     origin: 'right',
     distance: '40px',
     duration: 1000,
-    reset: false     
+    reset: true     
 })
 kanan.reveal('.profil', {delay:1500})
 kiri.reveal('.Oline:nth-child(2)', {delay:2000,scale:0, opacity:0, visibility:'hidden'})
@@ -107,18 +101,18 @@ kanan.reveal('.skills-box:nth-child(1)', {delay:200})
 kanan.reveal('.skills-box:nth-child(2)', {delay:600})
 kanan.reveal('.skills-box:nth-child(3)', {delay:800})
 
-
-
-
 const atas = ScrollReveal({
     origin: 'top',
     distance: '40px',
     duration: 1000,
-    reset: false     
+    reset: true     
 })
+
 atas.reveal('.awalsc', {});
 atas.reveal('form', {delay:0});
 atas.reveal('.nav', {delay:0, distance:'90px'});
+
+
 
 
 
@@ -257,7 +251,7 @@ function sendEmail() {
     var successMessageDiv = document.getElementById('success-messages');
     if (!nama || !email || !isi) {
         // Tampilkan pesan error di dalam div
-        errorMessageDiv.innerHTML = '<div id="error-message">Wait a second! All fields need some love</div>';
+        errorMessageDiv.innerHTML = '<div id="error-message"><div class="error-logo"><i class="fi fi-br-cross"></i></div><br>Wait a second! All fields need some love</div>';
         errorMessageDiv.style.bottom = '10px';
         errorMessageDiv.style.opacity = '1';
         return; 
@@ -270,7 +264,7 @@ function sendEmail() {
     emailjs.send('service_wocvrs4','template_rzz34k4', params)
         .then(function(response) {
             console.log('SUCCESS!', response.status, response.text);
-            successMessageDiv.innerHTML = '<div id="success-message">Done! Message flying now!</div>';
+            successMessageDiv.innerHTML = '<div id="success-message"><div class="succes-logo"><i class="fi fi-br-check"></i></div><br>Done! Message flying now!</div>';
         }, function(error) {
             console.log('FAILED...', error);
         });
