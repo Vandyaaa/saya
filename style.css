@@ -563,17 +563,16 @@ span {
 }
 
 .about .info-sc2 {
-    padding: 20px;
+    padding-inline: 20px;
     min-width: 200px;
     width: 100%;
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: start;
     justify-content: space-between;
     background-color: var(--5);
-    border-radius: 20px;
-    box-shadow: -20px 20px 60px var(--5II),
-        20px -20px 60px var(--dr3);
+    /* box-shadow: -20px 20px 60px var(--5II),
+        20px -20px 60px var(--dr3); */
     color: var(--1);
     position: relative;
     overflow: hidden;
@@ -602,15 +601,15 @@ span {
 .about .info-sc2 .head-info {
     font-size: 25px;
     font-weight: 600;
-    padding: 20px;
-    text-align: center;
+    padding-inline: 20px;
+    text-align: left;
     z-index: 2;
 }
 
 .about .info-sc2 .isi-info {
     font-size: clamp(0.75rem, 0.275rem + 1vw, 1rem);
     padding: 30px 15px 30px 15px;
-    text-align: center;
+    text-align: left;
     margin-top: 0;
     line-height: 27px;
     font-family: var(--font-sec);
@@ -682,7 +681,8 @@ span {
 
 .con-skill {
     width: 50%;
-    padding: 50px;
+    padding-inline: 50px;
+    height: 100%;
     display: block;
 }
 
@@ -787,7 +787,7 @@ span {
     width: 100%;
     height: 250px;
 
-    background-color: var(--2);
+    background-color: var(--gradient1);
     position: relative;
     display: flex;
     flex-direction: column;
@@ -806,6 +806,13 @@ span {
     user-select: none;
     border: 5px solid var(--5II);
     border-radius: 20px;
+    background-size: 95%;
+    background-position: 50% 100px;
+}
+
+.projek:hover {
+    background-size: 50%;
+    background-position: 50% 50%;
 }
 
 .projek::after {
@@ -879,8 +886,9 @@ span {
     width: max-content;
     height: 32px;
     position: absolute;
-    bottom: 10px;
-    left: 10px;
+    top: 10px;
+    right: 50%;
+    translate: 50% 0%;
     font-size: 10px;
     display: grid;
     place-items: center;
@@ -933,11 +941,16 @@ span {
     .row-sc3:hover> :not(:hover) {
         filter: brightness(60%) contrast(110%);
         scale: 0.93;
+        border-color: var(--dr5III);
     }
 
     .projek:hover {
         border-color: var(--1);
         border-style: solid;
+    }
+
+    .projek:hover .nama-projek {
+        top: -100%;
     }
 }
 
@@ -1275,7 +1288,7 @@ span {
     .row-sc3 {
         display: grid;
         grid-template-columns: repeat(1, 1fr);
-        grid-template-rows: repeat(6, 1fr);
+        grid-template-rows: repeat(3, 1fr);
         width: 100%;
         gap: 20px;
         background-color: transparent;
@@ -1554,7 +1567,7 @@ p {
     height: min-content;
     padding: 2em;
     padding-block: 3em;
-    background-color: var(--5);
+    background: var(--gradient1);
     border: 3px solid var(--dr3);
     color: var(--1);
     font-size: clamp(12px, (2.5vw), 16px);
@@ -1582,18 +1595,6 @@ p {
 }
 
 
-
-@media (min-width:760px) {
-    .quote:hover {
-        border-color: var(--8);
-    }
-
-    .quote:hover .tag-logo1,
-    .quote:hover .tag-logo2 {
-        color: var(--8);
-        opacity: 1;
-    }
-}
 
 .box-quote:nth-child(1) .quote {
     animation-delay: 0s;
@@ -1646,13 +1647,26 @@ p {
     opacity: 1;
     display: block;
     background-color: var(--5II);
-    margin-right: 10px;
+    margin-right: 0px;
     transition: .5s;
 }
 
 .quote:hover .asing span {
     width: 20px;
+    margin-right: 10px;
     background-color: var(--dr5III);
+}
+
+@media (min-width:760px) {
+    .quote:hover {
+        border-color: var(--8);
+    }
+
+    .quote:hover .tag-logo1,
+    .quote:hover .tag-logo2 {
+        color: var(--8);
+        opacity: 1;
+    }
 }
 
 .sertifikat img {
