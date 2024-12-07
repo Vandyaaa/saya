@@ -42,7 +42,7 @@ const bottom = ScrollReveal({
     duration: 1000,
     opacity:0,
     origin: 'bottom',
-    reset: true ,
+    reset: false ,
     viewFactor: 0.1
 })
 bottom.reveal('.nama-sc1', {})
@@ -73,7 +73,7 @@ const kiri = ScrollReveal({
     distance: '40px',
     duration: 1000,
     opacity:0,
-    reset: true     
+    reset: false     
 })
 kiri.reveal('.info-sc1', {delay:700})
 kiri.reveal('.sosmed-sc1 a:nth-child(1)', {delay:1100, opacity:0})
@@ -89,7 +89,7 @@ const kanan = ScrollReveal({
     origin: 'right',
     distance: '40px',
     duration: 1000,
-    reset: true     
+    reset: false     
 })
 kanan.reveal('.profil', {delay:1500})
 kiri.reveal('.Oline:nth-child(2)', {delay:2000,scale:0, opacity:0, visibility:'hidden'})
@@ -105,7 +105,7 @@ const atas = ScrollReveal({
     origin: 'top',
     distance: '40px',
     duration: 1000,
-    reset: true     
+    reset: false     
 })
 
 atas.reveal('.awalsc', {});
