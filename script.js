@@ -117,63 +117,63 @@ atas.reveal('.nav', {delay:0, distance:'90px'});
 
 
  
- let typingEffect = new Typed(".typedText",{
-    strings : ["Designer","Developer","Human"],
-    loop : true,
-    typeSpeed : 70, 
-    backSpeed : 80,
-    backDelay : 2000
- })
+//  let typingEffect = new Typed(".typedText",{
+//     strings : ["Designer","Developer","Human"],
+//     loop : true,
+//     typeSpeed : 70, 
+//     backSpeed : 80,
+//     backDelay : 2000
+//  })
 
  
 
-function buka() {
-    var kosila = document.getElementById("kosil")
-    var buka = document.getElementById("menu");
-    var b1 = document.getElementById("baris1");
-    var b3 = document.getElementById("baris3");
-    buka.classList.toggle("buka");
-    kosila.classList.toggle("kosile");
-    [b1, b3].forEach(function(element) {
-        element.classList.toggle("silang");
-    });
-}
+// function buka() {
+//     var kosila = document.getElementById("kosil")
+//     var buka = document.getElementById("menu");
+//     var b1 = document.getElementById("baris1");
+//     var b3 = document.getElementById("baris3");
+//     buka.classList.toggle("buka");
+//     kosila.classList.toggle("kosile");
+//     [b1, b3].forEach(function(element) {
+//         element.classList.toggle("silang");
+//     });
+// }
 
 
 
-function show() {
-    var rowsc3 = document.getElementById("rowsc3");
-    var expand = document.getElementById("expand");
-    rowsc3.classList.toggle("show");
-    if (expand.innerHTML === "Show All") {
-      expand.innerHTML = "Less";
-      expand.style.backgroundColor = "var(--1)";
-      expand.style.color = "var(--5)";
-      expand.style.transition = ".5s";
-    } else {
-      expand.innerHTML = "Show All";
-      expand.style.backgroundColor = "var(--dr3)";
-      expand.style.color = "var(--1)";
-    }
-}
+// function show() {
+//     var rowsc3 = document.getElementById("rowsc3");
+//     var expand = document.getElementById("expand");
+//     rowsc3.classList.toggle("show");
+//     if (expand.innerHTML === "Show All") {
+//       expand.innerHTML = "Less";
+//       expand.style.backgroundColor = "var(--1)";
+//       expand.style.color = "var(--5)";
+//       expand.style.transition = ".5s";
+//     } else {
+//       expand.innerHTML = "Show All";
+//       expand.style.backgroundColor = "var(--dr3)";
+//       expand.style.color = "var(--1)";
+//     }
+// }
 
-function openModal(src, title, description) {
-    var modal = document.getElementById("myModal");
-    var modalImg = document.getElementById("img01");
-    var captionText = document.getElementById("caption");
-    var descriptionText = document.getElementById("deskripsi");
+// function openModal(src, title, description) {
+//     var modal = document.getElementById("myModal");
+//     var modalImg = document.getElementById("img01");
+//     var captionText = document.getElementById("caption");
+//     var descriptionText = document.getElementById("deskripsi");
 
-    modal.classList.toggle("modl");
-    modal.style.display = "flex";
-    modal.style.backgroundColor ="var(--dr3)";
-    modal.style.transition = "display 3s";
-    modal.style.justifyContent = "center";
-    modal.style.flexDirection = "column";
-    modal.style.alignItems = "center";
-    modalImg.src = src;
-    captionText.innerHTML = title;
-    descriptionText.innerHTML = description;
-}
+//     modal.classList.toggle("modl");
+//     modal.style.display = "flex";
+//     modal.style.backgroundColor ="var(--dr3)";
+//     modal.style.transition = "display 3s";
+//     modal.style.justifyContent = "center";
+//     modal.style.flexDirection = "column";
+//     modal.style.alignItems = "center";
+//     modalImg.src = src;
+//     captionText.innerHTML = title;
+//     descriptionText.innerHTML = description;
+// }
 
 
 function closeModal() {
@@ -270,52 +270,52 @@ function sendEmail() {
         });
 }
 
-// function redirectToWhatsApp() {
-//     // Ambil nilai input dari form
-//     var nama = document.getElementById('nama').value.trim();
-//     var judul = document.getElementById('judul').value.trim();
-//     var isi = document.getElementById('isi').value.trim();
+function redirectToWhatsApp() {
+    // Ambil nilai input dari form
+    var nama = document.getElementById('nama').value.trim();
+    var judul = document.getElementById('judul').value.trim();
+    var isi = document.getElementById('isi').value.trim();
 
-//     // Elemen untuk pesan error
-//     var errorMessageDiv = document.getElementById('error-messages');
+    // Elemen untuk pesan error
+    var errorMessageDiv = document.getElementById('error-messages');
     
-//     // Reset pesan error
-//     errorMessageDiv.textContent = "";
+    // Reset pesan error
+    errorMessageDiv.textContent = "";
 
-//     // Validasi jika input masih kosong
-//     if (!nama || !judul || !isi) {
-//         // Tampilkan pesan error di dalam div
-//         errorMessageDiv.innerHTML = '<div id="error-message"><i class="fi fi-br-exclamation"></i>please fill in all fields</div>';
-//         errorMessageDiv.style.bottom = '10px';
-//         errorMessageDiv.style.opacity = '1';
+    // Validasi jika input masih kosong
+    if (!nama || !judul || !isi) {
+        // Tampilkan pesan error di dalam div
+        errorMessageDiv.innerHTML = '<div id="error-message"><i class="fi fi-br-exclamation"></i>please fill in all fields</div>';
+        errorMessageDiv.style.bottom = '10px';
+        errorMessageDiv.style.opacity = '1';
         
-//         return; // Hentikan fungsi jika ada input yang kosong
-//     }
+        return; // Hentikan fungsi jika ada input yang kosong
+    }
 
     
 
-//     // Nomor WhatsApp yang dituju (sesuaikan dengan nomor tujuan)
-//     var phoneNumber = '6287739770494'; 
+    // Nomor WhatsApp yang dituju (sesuaikan dengan nomor tujuan)
+    var phoneNumber = '6287739770494'; 
 
-//     // Format pesan dengan Nama dan Judul menjadi teks bold dan italic
-//     var message = ` *Nama:* *${nama}*\n *Judul:* *${judul}*\n Pesan: ${isi}`;
+    // Format pesan dengan Nama dan Judul menjadi teks bold dan italic
+    var message = ` *Nama:* *${nama}*\n *Judul:* *${judul}*\n Pesan: ${isi}`;
 
-//     // Encode pesan agar aman untuk URL
-//     var encodedMessage = encodeURIComponent(message);
+    // Encode pesan agar aman untuk URL
+    var encodedMessage = encodeURIComponent(message);
 
-//     // URL untuk mengarahkan ke WhatsApp
-//     var url = `https://api.whatsapp.com/send?phone=${phoneNumber}&text=${encodedMessage}`;
+    // URL untuk mengarahkan ke WhatsApp
+    var url = `https://api.whatsapp.com/send?phone=${phoneNumber}&text=${encodedMessage}`;
 
-//     // Buka halaman WhatsApp dengan URL yang disiapkan
-//     window.open(url);
-// }
+    // Buka halaman WhatsApp dengan URL yang disiapkan
+    window.open(url);
+}
 
 
-// document.addEventListener('mousemove', function(e) {
-//     var mouseDiv = document.querySelector('.mouse-follow');
-//     mouseDiv.style.left = e.pageX + 'px';
-//     mouseDiv.style.top = e.pageY + 'px';
-// });
+document.addEventListener('mousemove', function(e) {
+    var mouseDiv = document.querySelector('.mouse-follow');
+    mouseDiv.style.left = e.pageX + 'px';
+    mouseDiv.style.top = e.pageY + 'px';
+});
 
   // Dapatkan elemen button
         var backToTopButton = document.getElementById("backToTop");
@@ -342,12 +342,12 @@ function sendEmail() {
 
 
 
-        // function kirimkan() {
-        //     let prams = {
-        //         name : document.getElementById('nama').value,
-        //         email : document.getElementById('email').value,
-        //         message : document.getElementById('isi').value,
-        //     }
+        function kirimkan() {
+            let prams = {
+                name : document.getElementById('nama').value,
+                email : document.getElementById('email').value,
+                message : document.getElementById('isi').value,
+            }
 
-        //     emailjs.send('service_wocvrs4','template_rzz34k4',prams).then(alert('Pesan Terkirim'))
-        // }
+            emailjs.send('service_wocvrs4','template_rzz34k4',prams).then(alert('Pesan Terkirim'))
+        }
